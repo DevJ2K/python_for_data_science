@@ -1,6 +1,5 @@
 def NULL_not_found(object = None) -> int:
-    obj_type = str(type(object))
-    object_type = obj_type[obj_type.find("'") + 1:obj_type.rfind("'")]
+    object_type = type(object).__name__
 
     if object_type != "float" and object not in [None, 0, '', False]:
         print("Type not Found")
@@ -20,5 +19,5 @@ def NULL_not_found(object = None) -> int:
             print(f"Fake: ", end="")
         case "NoneType":
             print("Nothing: ", end="")
-    print(f"{object} {obj_type}")
+    print(f"{object} {type(object)}")
     return 0
