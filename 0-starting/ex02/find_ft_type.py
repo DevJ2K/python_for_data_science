@@ -1,6 +1,6 @@
 def all_thing_is_obj(object = None) -> int:
     if object is None:
-        return
+        return 42
     obj_type = str(type(object))
 
     object_type = obj_type[obj_type.find("'") + 1:obj_type.rfind("'")]
