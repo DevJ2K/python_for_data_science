@@ -1,5 +1,6 @@
 import sys
 
+
 def is_integer(value: str):
     if len(value) > 0:
         if value.startswith("-"):
@@ -7,12 +8,14 @@ def is_integer(value: str):
         return value.isdigit()
     return False
 
+
 def whatis(n: int):
     if n % 2 == 0:
         print("I'm Even.")
     else:
         print("I'm Odd.")
     pass
+
 
 def main(args: list[str]):
     if len(args) == 0:
@@ -22,6 +25,7 @@ def main(args: list[str]):
     if not is_integer(args[0]):
         raise AssertionError("argument is not an integer")
     whatis(int(args[0]))
+
 
 if __name__ == "__main__":
     try:

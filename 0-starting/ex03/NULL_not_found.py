@@ -1,4 +1,4 @@
-def NULL_not_found(object = None) -> int:
+def NULL_not_found(object=None) -> int:
     object_type = type(object).__name__
 
     if object_type != "float" and object not in [None, 0, '', False]:
@@ -14,9 +14,9 @@ def NULL_not_found(object = None) -> int:
         case "int":
             print("Zero: ", end="")
         case "float":
-            print(f"Cheese: ", end="")
+            print("Cheese: ", end="")
         case "bool":
-            print(f"Fake: ", end="")
+            print("Fake: ", end="")
         case "NoneType":
             print("Nothing: ", end="")
     print(f"{object} {type(object)}")

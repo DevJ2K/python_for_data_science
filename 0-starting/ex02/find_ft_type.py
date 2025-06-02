@@ -1,4 +1,4 @@
-def all_thing_is_obj(object = None) -> int:
+def all_thing_is_obj(object=None) -> int:
     if object is None:
         return 42
     obj_type = type(object).__name__.capitalize()

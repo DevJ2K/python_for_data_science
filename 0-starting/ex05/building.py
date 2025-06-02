@@ -1,8 +1,10 @@
 import sys
 
+
 def main(args: list[str]) -> None:
     """
-    Count the number of characters in a sentence, including upper letters, lower letters, punctuation marks, spaces, and digits."""
+    Count the number of characters in a sentence, including upper letters,
+    lower letters, punctuation marks, spaces, and digits."""
     if len(args) == 0 or args[0] == "None":
         words = []
         print("What is the text to count? ", end="")
@@ -21,18 +23,20 @@ def main(args: list[str]) -> None:
 
     punctuation = r"""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"""
 
-    upper_count = len([char for char in sentence if char.isupper()])
-    lower_count = len([char for char in sentence if char.islower()])
-    punctuation_count = len([char for char in sentence if char in punctuation])
-    space_count = len([char for char in sentence if char.isspace()])
-    digit_count = len([char for char in sentence if char.isdigit()])
+    nb_upper = len([char for char in sentence if char.isupper()])
+    nb_lower = len([char for char in sentence if char.islower()])
+    nb_punctuation = len([char for char in sentence if char in punctuation])
+    nb_space = len([char for char in sentence if char.isspace()])
+    nb_digit = len([char for char in sentence if char.isdigit()])
 
-    print(f"The text contains {upper_count + lower_count + punctuation_count + space_count + digit_count} characters:")
-    print(f"{upper_count} upper letters")
-    print(f"{lower_count} lower letters")
-    print(f"{punctuation_count} punctuation marks")
-    print(f"{space_count} spaces")
-    print(f"{digit_count} digits")
+    sum_count = nb_upper + nb_lower + nb_punctuation + nb_space + nb_digit
+
+    print(f"The text contains {sum_count} characters:")
+    print(f"{nb_upper} upper letters")
+    print(f"{nb_lower} lower letters")
+    print(f"{nb_punctuation} punctuation marks")
+    print(f"{nb_space} spaces")
+    print(f"{nb_digit} digits")
 
 
 if __name__ == "__main__":
