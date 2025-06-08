@@ -2,9 +2,12 @@ import numpy as np
 from pathlib import Path
 from PIL import Image
 
-def ft_load(path: str | Path) -> np.ndarray:
-    #your code here
 
+def ft_load(path: str | Path) -> np.ndarray:
+    """
+    Load an image from the specified path and return it as a NumPy array.
+    The image must be in JPG, JPEG, or PNG format.
+    """
     if isinstance(path, str):
         path: Path = Path(path)
     elif not isinstance(path, Path):
