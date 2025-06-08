@@ -1,8 +1,9 @@
-def get_shape(lst: list[list]) -> str:
+def get_shape(lst: list[list]) -> tuple:
+    """Return the shape of a 2D array."""
     y_shape = len(lst)
     if y_shape == 0:
-        return "(0, 0)"
-    return f"({y_shape}, {len(lst[0])})"
+        return (0, 0)
+    return (y_shape, len(lst[0]))
 
 
 def slice_me(family: list, start: int, end: int) -> list:
