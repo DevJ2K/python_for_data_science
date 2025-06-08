@@ -3,6 +3,11 @@ from typing import Generator
 
 
 def ft_tqdm(lst: range) -> None:
+    """
+    A simple progress bar that displays the percentage of completion
+    and the current iteration out of the total number of iterations.
+    """
+
     line_clear = '\x1b[2K'
     terminal_size = 100
     iteration = 1
@@ -24,6 +29,11 @@ def ft_tqdm(lst: range) -> None:
 
 
 def ft_tqdm_responsive(lst: range) -> Generator:
+    """
+    A simple progress bar that displays the percentage of completion
+    and the current iteration out of the total number of iterations.
+    """
+
     line_clear = '\x1b[2K'
     terminal_size = os.get_terminal_size().columns
     iteration = 1
