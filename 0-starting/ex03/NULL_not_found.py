@@ -1,4 +1,6 @@
 def NULL_not_found(object=None) -> int:
+    """
+    This function checks the type of the given object and prints a message"""
     object_type = type(object).__name__
 
     if object_type != "float" and object not in [None, 0, '', False]:

@@ -48,15 +48,18 @@ def is_valid_string(string: str):
     return all([c.upper() in NESTED_MORSE.keys() for c in string])
 
 
-def main(args: list[str]) -> None:
-    if len(args) != 1 or not is_valid_string(args[0]):
-        raise AssertionError("the arguments are bad")
-    converted_values = [NESTED_MORSE[c.upper()] for c in args[0]]
-    print(" ".join(converted_values))
+def main() -> None:
+    """
+    Main function to convert a string to Morse code."""
+    try:
+        args = sys.argv[1:]
+        if len(args) != 1 or not is_valid_string(args[0]):
+            raise AssertionError("the arguments are bad")
+        converted_values = [NESTED_MORSE[c.upper()] for c in args[0]]
+        print(" ".join(converted_values))
+    except Exception as e:
+        print(f"{type(e).__name__}: {e}")
 
 
 if __name__ == "__main__":
-    try:
-        main(args=sys.argv[1:])
-    except Exception as e:
-        print(f"{type(e).__name__}: {e}")
+    main()
