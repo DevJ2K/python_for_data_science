@@ -1,6 +1,7 @@
 import os
 from typing import Generator
 
+
 def ft_tqdm(lst: range) -> None:
     line_clear = '\x1b[2K'
     terminal_size = 100
@@ -21,6 +22,7 @@ def ft_tqdm(lst: range) -> None:
         iteration += 1
         yield i
 
+
 def ft_tqdm_responsive(lst: range) -> Generator:
     line_clear = '\x1b[2K'
     terminal_size = os.get_terminal_size().columns
@@ -31,12 +33,15 @@ def ft_tqdm_responsive(lst: range) -> Generator:
         complete_progress_bar += f"{progression}%|".rjust(5)
 
         after_progress_bar = f"| {iteration}/{len(lst)}"
-        after_progress_bar += f"                          "
+        after_progress_bar += "                          "
 
-        animate_progress_bar_size = terminal_size - len(complete_progress_bar) - len(after_progress_bar)
+        animate_progress_bar_size = terminal_size
+        animate_progress_bar_size -= len(complete_progress_bar)
+        animate_progress_bar_size -= len(after_progress_bar)
 
-        animate_progress_bar = "█" * int((animate_progress_bar_size * progression) / 100)
-        animate_progress_bar += " " * (animate_progress_bar_size - int((animate_progress_bar_size * progression) / 100))
+        nb_bloc = int((animate_progress_bar_size * progression) / 100)
+        animate_progress_bar = "█" * nb_bloc
+        animate_progress_bar += " " * (animate_progress_bar_size - nb_bloc)
 
         complete_progress_bar += animate_progress_bar + after_progress_bar
         if iteration > 0:
