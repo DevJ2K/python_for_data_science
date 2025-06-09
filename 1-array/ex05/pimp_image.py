@@ -32,8 +32,7 @@ def ft_blue(array: np.ndarray) -> np.ndarray:
 
 
 def ft_grey(array: np.ndarray) -> np.ndarray:
-    """
-    Convert the image represented by the NumPy array
-    to grayscale using the average of the RGB channels.
+    """Convert the image represented by the NumPy array \
+to grayscale using the average of the RGB channels.
     """
     return np.mean(array, axis=2)

@@ -3,6 +3,7 @@ import pytest
 
 
 class TestGiveBmi:
+    """Tests for the give_bmi function."""
     def test_not_same_args_size(self):
         with pytest.raises(AssertionError):
             give_bmi([3.2, 1.2], [1.2])
@@ -29,6 +30,7 @@ class TestGiveBmi:
 
 
 class TestApplyLimit:
+    """Tests for the apply_limit function."""
     def test_bmi_not_a_number(self):
         with pytest.raises(AssertionError):
             apply_limit([3.2, "a"], 30)

@@ -3,6 +3,7 @@ import pytest
 
 
 class TestArray2D:
+    """Tests for the slice_me function."""
     def test_one_dimension_array(self):
         with pytest.raises(AssertionError):
             slice_me([1, 2, 3], 0, 2)

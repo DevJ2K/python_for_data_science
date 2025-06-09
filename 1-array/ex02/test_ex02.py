@@ -4,8 +4,9 @@ import pytest
 
 
 class TestFtLoad:
+    """Tests for the ft_load function."""
     def test_valid_file(self):
-        result = ft_load("landscape.jpg")
+        result = ft_load(Path(__file__).parent / "landscape.jpg")
         assert result.shape == (257, 450, 3)
 
     def test_file_not_exist(self):

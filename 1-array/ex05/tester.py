@@ -28,28 +28,30 @@ def main():
     green_array = ft_green(array)
     blue_array = ft_blue(array)
     grey_array = ft_grey(array)
-    print(" ==== DOCUMENTATION ==== ")
-    print(ft_invert.__doc__)
-    print(ft_red.__doc__)
-    print(ft_green.__doc__)
-    print(ft_blue.__doc__)
-    print(ft_grey.__doc__)
 
+    print(" ==== ORIGINAL IMAGE ==== ")
     input("Press Enter to show original image...")
     show_image(array)
 
+    print(" ==== DOCUMENTATION ==== ")
+
+    print(ft_invert.__doc__)
     input("Press Enter to show inverted image...")
     show_image(invert_array)
 
+    print(ft_red.__doc__)
     input("Press Enter to show red filtered image...")
     show_image(red_array)
 
+    print(ft_green.__doc__)
     input("Press Enter to show green filtered image...")
     show_image(green_array)
 
+    print(ft_blue.__doc__)
     input("Press Enter to show blue filtered image...")
     show_image(blue_array)
 
+    print(ft_grey.__doc__)
     input("Press Enter to show grey image...")
     show_image(grey_array, mode='L')
 
