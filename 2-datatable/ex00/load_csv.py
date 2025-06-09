@@ -2,6 +2,7 @@ import pandas as pd
 from pathlib import Path
 
 def load(path: str | Path) -> pd.DataFrame | None:
+    """Load a CSV file into a pandas DataFrame."""
     try:
         if isinstance(path, str):
             path: Path = Path(path)
