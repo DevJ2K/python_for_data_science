@@ -22,7 +22,6 @@ def ft_load(path: str | Path) -> np.ndarray:
         image = Image.open(path)
         image = image.convert("RGB")
         image_array: np.ndarray = np.array(image)
-        print(f"The shape of image is: {image_array.shape}")
         return image_array
     except Exception as e:
         raise RuntimeError(f"An error occurred while loading the image: {e}")

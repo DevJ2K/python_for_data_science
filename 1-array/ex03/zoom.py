@@ -36,6 +36,7 @@ def main():
     """
     try:
         array_image = ft_load("animal.jpeg")
+        print(f"The shape of image is: {array_image.shape}")
         print(array_image)
 
         zoomed_image: np.ndarray = zoom(
