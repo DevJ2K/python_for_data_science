@@ -14,13 +14,29 @@ def main():
         if france_row.shape[0] == 0:
             print("No line has been found...")
             return 1
-        print(france_row)
-        france_row = france_row.drop(columns=["country"])
-        print(france_row)
+        # print(france_row)
 
-        france_row.cumsum()
-        france_row.plot()
-        # print(france_row[1:])
+
+        france_row = france_row.drop(columns=["country"])
+
+        series = france_row.iloc[0]
+
+        x_axis = series.index.astype(int)  # year
+        y_axis = series.values             # life expectancy
+
+        fig, ax = plt.subplots(1, 1, figsize=(8, 6))
+
+
+        fig.canvas.manager.set_window_title("Data visualization")
+
+        ax.set_xlabel("Year")
+        ax.set_ylabel("Life expectancy")
+
+        ax.set_xticks(range(x_axis[0], x_axis[-1], 40))
+        ax.set_title("France Life expectancy Projections")
+
+        ax.plot(x_axis, y_axis)
+        plt.show()
         return 0
     except Exception as e:
         print(f"{type(e).__name__}: {e}")
