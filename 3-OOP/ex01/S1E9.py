@@ -13,7 +13,9 @@ class Character(ABC):
         self.is_alive = is_alive
 
     @abstractmethod
-    def die(self) -> None: ...
+    def die(self) -> None:
+        """Your docstring for Method"""
+        ...
 
 
 class Stark(Character):
