@@ -45,7 +45,6 @@ def main():
         ax.set_xlim(300, 10000)
         ax.set_title("1900")
 
-        # ax.plot(x_axis, y_axis)
         plt.show()
         return 0
     except Exception as e:

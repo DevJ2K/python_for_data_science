@@ -31,8 +31,8 @@ def main():
 
         series = country_row.iloc[0]
 
-        x_axis = series.index.astype(int)  # year
-        y_axis = series.values             # life expectancy
+        x_axis = series.index.astype(int)     # year
+        y_axis = series.values.astype(float)  # life expectancy
 
         fig, ax = plt.subplots(1, 1, figsize=(8, 6))
 
