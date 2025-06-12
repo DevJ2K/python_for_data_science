@@ -5,27 +5,36 @@ import matplotlib.pyplot as plt
 
 def main():
     """Main function to load and print the life expectancy dataset."""
+    CITY = "France"
     try:
         df: pd.DataFrame | None = load("life_expectancy_years.csv")
         if df is None:
             return 1
-        # print(df)
-        france_row = df.loc[df["country"] == "France"]
-        if france_row.shape[0] == 0:
+
+        country_row = df.loc[df["country"] == CITY]
+        if country_row.shape[0] == 0:
             print("No line has been found...")
             return 1
-        # print(france_row)
+        if country_row.shape[1] == 0:
+            print("No content to display...")
+            return 1
 
+        country_row = country_row.drop(columns=["country"])
+        country_row.dropna(axis=1, how="all", inplace=True)
 
-        france_row = france_row.drop(columns=["country"])
+        if country_row.shape[1] == 0:
+            print("No content to display...")
+            return 1
+        elif country_row.shape[1] == 1:
+            print("Isn't exist enough datas to display the graph...")
+            return 1
 
-        series = france_row.iloc[0]
+        series = country_row.iloc[0]
 
         x_axis = series.index.astype(int)  # year
         y_axis = series.values             # life expectancy
 
         fig, ax = plt.subplots(1, 1, figsize=(8, 6))
-
 
         fig.canvas.manager.set_window_title("Data visualization")
 
@@ -33,7 +42,7 @@ def main():
         ax.set_ylabel("Life expectancy")
 
         ax.set_xticks(range(x_axis[0], x_axis[-1], 40))
-        ax.set_title("France Life expectancy Projections")
+        ax.set_title(f"{CITY} Life expectancy Projections")
 
         ax.plot(x_axis, y_axis)
         plt.show()
