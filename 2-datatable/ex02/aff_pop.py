@@ -74,7 +74,7 @@ def get_axis(df: pd.DataFrame, city: str) -> tuple | None:
 
 
 def main():
-    """Main function to load and print the life expectancy dataset."""
+    """Load and display population/year between 2 cities."""
     CITY_1 = "France"
     CITY_2 = "Belgium"
     try:
