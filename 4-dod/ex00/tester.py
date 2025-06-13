@@ -7,17 +7,3 @@ ft_statistics(5, 75, 450, 18, 597, 27474, 48575,
               ejfhhe="heheh", ejdjdejn="kdekem")
 print("-----")
 ft_statistics(toto="mean", tutu="median", tata="quartile")
-
-"""
-mean : 95.6
-median : 42
-quartile : [11.0, 64.0]
------
-std : 17982.70124086944
-var : 323377543.9183673
------
------
-ERROR
-ERROR
-ERROR
-"""

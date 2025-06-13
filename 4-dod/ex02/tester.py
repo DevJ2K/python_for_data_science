@@ -14,12 +14,3 @@ def g():
 for i in range(3):
     f()
     g()
-
-"""
-f()
-g()
-f()
-Error: <function g at 0x7fabdc243ee0> call too many times
-f()
-Error: <function g at 0x7fabdc243ee0> call too many times
-"""
